@@ -390,7 +390,7 @@ with st.sidebar:
     st.markdown("### Output")
     output_fmt = st.radio("Format", ["xlsx", "csv"], horizontal=True, key="output_fmt")
 
-    run_btn = st.button("🚀 Bersihkan Data", use_container_width=True, type="primary")
+    run_btn = st.button("Bersihkan Data", use_container_width=True, type="primary")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
