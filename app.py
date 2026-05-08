@@ -7,8 +7,8 @@ from datetime import datetime
 
 # ── Page config ────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="DataScrub",
-    page_icon="🧹",
+    page_title="Data Cleaning Tools",
+    page_icon="./mn-icon.png",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -267,8 +267,7 @@ if "log" not in st.session_state:
 # SIDEBAR
 # ══════════════════════════════════════════════════════════════════════════════
 with st.sidebar:
-    st.markdown("## 🧹 DataScrub")
-    st.markdown("*Tools pembersihan data CSV & Excel*")
+    st.markdown("## Data Cleaning Tools")
     st.divider()
 
     # ── Upload ────────────────────────────────────────────────────────────
@@ -389,7 +388,7 @@ with st.sidebar:
 
     # ── Output format & tombol ────────────────────────────────────────────
     st.markdown("### Output")
-    output_fmt = st.radio("Format", ["csv", "xlsx"], horizontal=True, key="output_fmt")
+    output_fmt = st.radio("Format", ["xlsx", "csv"], horizontal=True, key="output_fmt")
 
     run_btn = st.button("🚀 Bersihkan Data", use_container_width=True, type="primary")
 
@@ -399,7 +398,7 @@ with st.sidebar:
 # ══════════════════════════════════════════════════════════════════════════════
 df = st.session_state.df
 
-st.markdown("# DataScrub 🧹")
+st.markdown("# Data Cleaning Tools")
 st.markdown("Bersihkan data CSV & Excel — hapus duplikat, filter kategori, dan unduh hasilnya.")
 st.divider()
 
@@ -413,7 +412,7 @@ col4.metric("Baris Kosong", f"{df.isnull().any(axis=1).sum():,}")
 st.divider()
 
 # ── Tabs: Preview & Analisis ─────────────────────────────────────────────────
-tab_preview, tab_info, tab_result = st.tabs(["📋 Preview Data", "📊 Info Kolom", "✅ Hasil Cleaning"])
+tab_preview, tab_info, tab_result = st.tabs(["Preview Data", "Info Kolom", "Hasil Cleaning"])
 
 with tab_preview:
     st.markdown("**5 baris pertama data mentah**")
@@ -484,4 +483,4 @@ with tab_result:
             type="primary",
         )
     else:
-        st.info("Klik **🚀 Bersihkan Data** di sidebar untuk memulai proses.")
+        st.info("Klik **Bersihkan Data** di sidebar untuk memulai proses.")
